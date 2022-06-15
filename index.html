@@ -10,29 +10,48 @@
   <title>Project Tracker</title>
 </head>
 <body>
-<header>
-    <h1>Project Tracker</h1>
-    <h2>Current Date & Time: <span></span></h2>
+<header class="jumbotron text-center">
+    <h1 class="display-3">Project Tracker</h1>
+    <h2 class="display-5"><u>Current Date & Time</u></h2>
+    <span id=""></span>
 </header>
 <main class="row">
     <section class="col-3">
         <div class="card">
-
-            <div class="card-footer">
+            <div class="card-header text-center">
+                <h3>Instructions</h3>
+            </div>
+            <div class="card-body">
+                <p>To add a new project to the list, click on the "Add Project" button below. A form will appear and prompt you for the following information:</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Name of the Project</li>
+                    <li class="list-group-item">The Type of Project</li>
+                    <li class="list-group-item">Hourly Wage</li>
+                    <li class="list-group-item">Due Date of Project</li>
+                  </ul>
+            </div>
+            <div class="card-footer text-right">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-                    Launch static backdrop modal
+                    Add Project
                   </button>
             </div>
         </div>
-        This is one section
     </section>
     <section class="col-9">
-        <p>This is section 2</p>
-        <table>
-            <TH>
-
-            </TH>
-        </table>
+        <table class="table text-center">
+            <thead class="table-primary">
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Hourly Wage</th>
+                <th scope="col">Due Date</th>
+                <th scope="col">Days Left</th>
+                <th scope="col">Estimated $</th>
+              </tr>
+            </thead>
+            <tbody id="project-list">
+            </tbody>
+          </table>
     </section>
 </main>
 <!-- Button trigger modal -->
@@ -43,7 +62,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Add Project</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -54,8 +73,8 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="save-record">Save</button>
         </div>
       </div>
     </div>
